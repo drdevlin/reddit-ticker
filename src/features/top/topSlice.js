@@ -4,9 +4,9 @@ const initialState = {
   posts: [
     {title: 'foo'},
     {title: 'bar'},
-    {title: 'two'},
-  ]
-}
+    {title: 'baz'},
+  ],
+};
 
 export const topSlice = createSlice({
   name: 'top',
@@ -15,3 +15,5 @@ export const topSlice = createSlice({
 });
 
 export default topSlice.reducer;
+
+export const selectAllPosts = state => state.top.posts;
