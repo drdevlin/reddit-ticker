@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAllPosts, fetchPosts } from './topSlice';
+import './Top.css';
 
 export const Top = () => {
   const [ postNum, setPostNum ] = useState(0);
@@ -32,9 +33,13 @@ export const Top = () => {
   } else if (postsStatus === 'succeeded') {
     const post = posts[postNum].data;
     content = (
-      <section>
-        {Boolean(post.thumbnail) && <img src={post.thumbnail} alt='' />}
-        <h2>{post.title}</h2>
+      <section className='current-top-post'>
+        <div className='top-image'>
+          {Boolean(post.thumbnail) && <img src={post.thumbnail} alt='' />}
+        </div>
+        <div className='top-title'>
+          <h1>{post.title}</h1>
+        </div>
       </section>
     );
   } else if (postsStatus === 'failed') {
@@ -42,8 +47,7 @@ export const Top = () => {
   }
 
   return (
-    <article>
-      <h1>Top Stories</h1>
+    <article className='Top'>
       {content}
     </article>
   );
