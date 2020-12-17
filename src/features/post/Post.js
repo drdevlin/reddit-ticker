@@ -11,6 +11,7 @@ export const Post = (props) => {
     <article>
       <h2>{post.title}</h2>
       {Boolean(body) && <div dangerouslySetInnerHTML={{__html: body}}></div>}
+      <a href={post.url} target='_blank' rel='noreferrer'>Full Story</a>
     </article>
   );
 }
