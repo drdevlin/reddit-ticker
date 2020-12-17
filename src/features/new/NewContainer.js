@@ -12,7 +12,7 @@ export const NewContainer = () => {
   const error = useSelector(state => state.new.error);
 
   const postGroups = [];
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 6; i++) {
     const index = i * 4;
     postGroups.push(posts.slice(index, index + 4));
   }
@@ -25,7 +25,7 @@ export const NewContainer = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      if (groupNum < 3) {
+      if (groupNum < 5) {
         setGroupNum((prev) => prev + 1);
       } else {
         setGroupNum(0);
