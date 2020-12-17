@@ -22,7 +22,7 @@ export const Top = () => {
       } else {
         setPostNum(0);
       }
-    }, 10000);
+    }, 40000);
     return () => clearInterval(intervalId);
   }, [postNum])
 
@@ -33,7 +33,6 @@ export const Top = () => {
     const post = posts[postNum].data;
     content = (
       <section>
-        <h1>Top Stories</h1>
         {Boolean(post.thumbnail) && <img src={post.thumbnail} alt='' />}
         <h2>{post.title}</h2>
       </section>
@@ -44,6 +43,7 @@ export const Top = () => {
 
   return (
     <article>
+      <h1>Top Stories</h1>
       {content}
     </article>
   );
