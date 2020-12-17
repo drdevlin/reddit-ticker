@@ -5,11 +5,17 @@ import { selectAllPosts, fetchPosts } from './newSlice';
 import { New } from '../new/New';
 
 export const NewContainer = () => {
-  const [ postNum, setPostNum ] = useState(0);
+  const [ groupNum, setGroupNum ] = useState(0);
   const dispatch = useDispatch();
   const posts = useSelector(selectAllPosts);
   const postsStatus = useSelector(state => state.new.status);
   const error = useSelector(state => state.new.error);
+
+  const postGroups = [];
+  for (let i = 0; i < 4; i++) {
+    const index = i * 4;
+    postGroups.push(posts.slice(index, index + 4));
+  }
 
   useEffect(() => {
     if (postsStatus === 'idle') {
@@ -32,8 +38,8 @@ export const NewContainer = () => {
   if (postsStatus === 'loading') {
     content = <p>Loading...</p>;
   } else if (postsStatus === 'succeeded') {
-    const post = posts[postNum].data;
-    content = <New title={post.title} />;
+    const group = postGroups[groupNum];
+    content = group.map(post => <New title={post.data.title} key={post.data.id} />);
   } else if (postsStatus === 'failed') {
     content = <div>{error}</div>;
   }
