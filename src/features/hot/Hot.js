@@ -17,16 +17,16 @@ export const Hot = () => {
     }
   }, [dispatch, postsStatus]);
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     if (postNum < 10) {
-  //       setPostNum((prev) => prev + 1);
-  //     } else {
-  //       setPostNum(0);
-  //     }
-  //   }, 10000);
-  //   return () => clearInterval(intervalId);
-  // }, [postNum])
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (postNum < 20) {
+        setPostNum((prev) => prev + 1);
+      } else {
+        setPostNum(0);
+      }
+    }, 20000);
+    return () => clearInterval(intervalId);
+  }, [postNum])
 
   let content;
   if (postsStatus === 'loading') {
@@ -40,6 +40,7 @@ export const Hot = () => {
 
   return (
     <article>
+      <h1>Hot Now</h1>
       {content}
     </article>
   );
