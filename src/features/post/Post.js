@@ -14,7 +14,7 @@ export const Post = (props) => {
   return (
     <article>
       <h2>{post.title}</h2>
-      {Boolean(body) && <div dangerouslySetInnerHTML={{__html: body}}></div>}
+      {Boolean(body) ? <div dangerouslySetInnerHTML={{__html: body}}></div> : (Boolean(post.thumbnail) && <img src={post.thumbnail} alt='' />)}
       <a href={post.url} target='_blank' rel='noreferrer'>Full Story at {post.domain}</a>
     </article>
   );
