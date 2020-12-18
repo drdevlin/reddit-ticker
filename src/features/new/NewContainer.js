@@ -41,11 +41,9 @@ export const NewContainer = () => {
   } else if (postsStatus === 'succeeded') {
     const group = postGroups[groupNum];
     content = group.map(post => (
-      <div className='new-post-wrapper'>
         <div  className='new-post'>
           <New title={post.data.title} key={post.data.id} />
         </div>
-      </div>
     ));
   } else if (postsStatus === 'failed') {
     content = <div>{error}</div>;

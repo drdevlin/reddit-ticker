@@ -1,10 +1,11 @@
 import React from 'react';
 
 export const New = (props) => {
-  const shortenedTitle = props.title.substring(0, 50);
+  const isLong = props.title.length > 70;
+  const shortenedTitle = props.title.substring(0, 70);
   return (
     <article>
-      <h3>{shortenedTitle}...</h3>
+      {isLong ? <p>{shortenedTitle}...</p> : <p>{props.title}</p>}
     </article>
   );
 }
