@@ -2,11 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { redditGet } from '../../api/reddit';
 
 const initialState = {
-  posts: [
-    {title: 'foo'},
-    {title: 'bar'},
-    {title: 'baz'},
-  ],
+  posts: [],
   status: 'idle',
   error: null
 };
