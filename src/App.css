@@ -1,7 +1,40 @@
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+
+h2, h4, h5, h6 {
   font-weight: 400;
 }
 
 p {
   font-weight: 100;
+}
+
+.App {
+  margin: 2vh 2vw;
+  display: grid;
+  grid-template: repeat(5, 17.6vh) / repeat(5, 17.6vw);
+  gap: 2vh 2vw;
+}
+
+.app-top {
+  grid-area: 1 / 1 / span 4 / span 3;
+}
+
+.app-hot {
+  grid-area: 2 / 4 / span 3 / span 2;
+}
+
+.app-new {
+  grid-area: 5 / 1 / span 1 / span 5;
 }
