@@ -29,21 +29,45 @@ p {
   line-height: 1.2;
 }
 
-.App {
-  margin: 2vh 2vw;
-  display: grid;
-  grid-template: repeat(5, 17.6vh) / repeat(5, 17.6vw);
-  gap: 2vh 2vw;
+@media screen and (orientation: landscape) {
+  .App {
+    margin: 2vh 2vw;
+    display: grid;
+    grid-template: repeat(5, 17.6vh) / repeat(5, 17.6vw);
+    gap: 2vh 2vw;
+  }
+  
+  .app-top {
+    grid-area: 1 / 1 / span 4 / span 3;
+  }
+  
+  .app-hot {
+    grid-area: 2 / 4 / span 3 / span 2;
+  }
+  
+  .app-new {
+    grid-area: 5 / 1 / span 1 / span 5;
+  }
 }
 
-.app-top {
-  grid-area: 1 / 1 / span 4 / span 3;
-}
 
-.app-hot {
-  grid-area: 2 / 4 / span 3 / span 2;
-}
-
-.app-new {
-  grid-area: 5 / 1 / span 1 / span 5;
+@media screen and (orientation: portrait) {
+  .App {
+    margin: 2vh 2vw;
+    display: grid;
+    grid-template: repeat(7, 12vh) / repeat(2, 47vw);
+    gap: 2vh 2vw;
+  }
+  
+  .app-top {
+    grid-area: 2 / 1 / span 3 / span 2;
+  }
+  
+  .app-hot {
+    grid-area: 5 / 1 / span 3 / span 1;
+  }
+  
+  .app-new {
+    grid-area: 5 / 2 / span 3 / span 1;
+  }
 }
