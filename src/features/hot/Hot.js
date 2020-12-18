@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAllPosts, fetchPosts } from './hotSlice';
+import './Hot.css';
 
 import { Post } from '../post/Post';
 
@@ -39,9 +40,13 @@ export const Hot = () => {
   }
 
   return (
-    <article>
-      <h1>Hot Now</h1>
-      {content}
+    <article className='Hot'>
+      <div className='hot-title'>
+        <h1>Hot Now</h1>
+      </div>
+      <div className='hot-content'>
+        {content}
+      </div>
     </article>
   );
 }

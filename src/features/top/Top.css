@@ -1,11 +1,15 @@
 .current-top-post {
   display: grid;
-  grid-template: repeat(3, 1fr) / 1fr;
+  grid-template: repeat(3, minmax(0, 1fr)) / 1fr;
+
+  min-height: 100%;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .top-image {
   grid-area: 1 / 1 / span 3 / span 1;
-  background-color: #949cdf;
+  background-color: #456268;
 }
 
 .top-image img {
@@ -21,6 +25,7 @@
   display: flex;
   align-items: center;
 
-  background-color: #949cdf;
+  background-color: #456268;
   text-align: center;
+  color:whitesmoke;
 }
