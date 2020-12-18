@@ -1,6 +1,6 @@
 .Top {
   display: grid;
-  grid-template: repeat(3, minmax(0, 1fr)) / 1fr;
+  grid-template: repeat(5, minmax(0, 1fr)) / 1fr;
 
   min-height: 100%;
   max-height: 100%;
@@ -15,7 +15,7 @@
 }
 
 .top-image {
-  grid-area: 1 / 1 / span 3 / span 1;
+  grid-area: 1 / 1 / span 5 / span 1;
   background-color: #456268;
 }
 
@@ -25,7 +25,7 @@
 
 .top-title {
   z-index: 1;
-  grid-area: 3 / 1 / span 1 / span 1;
+  grid-area: 5 / 1 / span 1 / span 1;
 
   padding: 1rem;
 

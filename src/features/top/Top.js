@@ -38,7 +38,7 @@ export const Top = () => {
           {Boolean(post.thumbnail) && <img src={post.thumbnail} alt='' />}
         </div>
         <div className='top-title'>
-          <h1>{post.title}</h1>
+          <h1>{post.title.toUpperCase()}</h1>
         </div>
       </section>
     );
