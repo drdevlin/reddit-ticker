@@ -36,6 +36,10 @@ p {
     grid-template: repeat(5, 17.6vh) / repeat(5, 17.6vw);
     gap: 2vh 2vw;
   }
+
+  .app-header {
+    grid-area: 1 / 4 / span 1 / span 2;
+  }
   
   .app-top {
     grid-area: 1 / 1 / span 4 / span 3;
