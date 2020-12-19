@@ -62,6 +62,10 @@ p {
     grid-template: repeat(7, 12vh) / repeat(2, 47vw);
     gap: 2vh 2vw;
   }
+
+  .app-header {
+    grid-area: 1 / 1 / span 1 / span 2;
+  }
   
   .app-top {
     grid-area: 2 / 1 / span 3 / span 2;
