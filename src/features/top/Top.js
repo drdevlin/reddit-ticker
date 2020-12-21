@@ -32,10 +32,18 @@ export const Top = () => {
     content = <p>Loading...</p>;
   } else if (postsStatus === 'succeeded') {
     const post = posts[postNum].data;
+    let image;
+    if (post.post_hint === 'image') {
+      image = <img src={post.url} alt='' />
+    } else if (post.post_hint === 'rich:video') {
+      image = <video controls autoplay muted src={post.url}>Video unsupported.</video>
+    } else {
+      if (post.thumbnail) image = <img src={post.thumbnail} alt='' />
+    }
     content = (
       <section className='current-top-post'>
         <div className='top-image'>
-          {Boolean(post.thumbnail) && <img src={post.thumbnail} alt='' />}
+          {image}
         </div>
         <div className='top-title'>
           <h1>{post.title.toUpperCase()}</h1>
