@@ -34,3 +34,5 @@ export const topSlice = createSlice({
 export default topSlice.reducer;
 
 export const selectAllPosts = state => state.top.posts;
+export const selectStatus = state => state.top.status;
+export const selectError = state => state.top.error;

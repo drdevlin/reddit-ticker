@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectAllPosts, fetchPosts } from './topSlice';
+
+import { 
+  selectAllPosts, 
+  selectStatus,
+  selectError, 
+  fetchPosts 
+} from './topSlice';
+
 import './Top.css';
 
 export const Top = () => {
   const [ postNum, setPostNum ] = useState(0);
   const dispatch = useDispatch();
   const posts = useSelector(selectAllPosts);
-  const postsStatus = useSelector(state => state.top.status);
-  const error = useSelector(state => state.top.error);
+  const postsStatus = useSelector(selectStatus);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     if (postsStatus === 'idle') {

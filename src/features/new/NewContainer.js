@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectAllPosts, fetchPosts } from './newSlice';
+import { 
+  selectAllPosts, 
+  selectStatus,
+  selectError,
+  fetchPosts 
+} from './newSlice';
 import './NewContainer.css';
 
 import { New } from '../new/New';
@@ -9,8 +14,8 @@ export const NewContainer = () => {
   const [ groupNum, setGroupNum ] = useState(0);
   const dispatch = useDispatch();
   const posts = useSelector(selectAllPosts);
-  const postsStatus = useSelector(state => state.new.status);
-  const error = useSelector(state => state.new.error);
+  const postsStatus = useSelector(selectStatus);
+  const error = useSelector(selectError);
 
   const postGroups = [];
   for (let i = 0; i < 6; i++) {

@@ -34,3 +34,5 @@ export const newSlice = createSlice({
 export default newSlice.reducer;
 
 export const selectAllPosts = state => state.new.posts;
+export const selectStatus = state => state.new.status;
+export const selectError = state => state.new.error;

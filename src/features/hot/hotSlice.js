@@ -34,3 +34,5 @@ export const hotSlice = createSlice({
 export default hotSlice.reducer;
 
 export const selectAllPosts = state => state.hot.posts;
+export const selectStatus = state => state.hot.status;
+export const selectError = state => state.hot.error;

@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectAllPosts, fetchPosts } from './hotSlice';
+import { 
+  selectAllPosts, 
+  selectStatus,
+  selectError,
+  fetchPosts 
+} from './hotSlice';
 import './Hot.css';
 
 import { Post } from '../post/Post';
@@ -9,8 +14,8 @@ export const Hot = () => {
   const [ postNum, setPostNum ] = useState(0);
   const dispatch = useDispatch();
   const posts = useSelector(selectAllPosts);
-  const postsStatus = useSelector(state => state.hot.status);
-  const error = useSelector(state => state.hot.error);
+  const postsStatus = useSelector(selectStatus);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     if (postsStatus === 'idle') {
