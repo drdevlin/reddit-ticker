@@ -32,7 +32,7 @@ export const Top = () => {
     content = <p>Loading...</p>;
   } else if (postsStatus === 'succeeded') {
     const post = posts[postNum].data;
-    let image;
+    let image = <img src='./public/lines.jpg' alt='' />;
     if (post.post_hint === 'image') {
       image = <img src={post.url} alt='' />
     } else if (post.post_hint === 'rich:video') {

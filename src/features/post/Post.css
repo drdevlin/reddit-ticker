@@ -10,14 +10,14 @@
   grid-area: 1 / 1 / span 1 / span 1;
   padding: 1rem;
 
-  background-color: #d0e8f2;
+  background-color: #9ba4b4;
 }
 
 .post-content {
   grid-area: 2 / 1 / span 1 / span 1;
   overflow: scroll;
 
-  background-color: #fcf8ec;
+  background-color: #f1f6f9;
 }
 
 .post-content img {
