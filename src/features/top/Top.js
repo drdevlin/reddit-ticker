@@ -10,6 +10,7 @@ import {
 import { selectExternalPost, selectMode } from '../post/viewPortSlice';
 import { Post } from '../post/Post';
 
+import { extractImage } from '../helpers/helpers';
 import './Top.css';
 
 export const Top = () => {
@@ -43,14 +44,7 @@ export const Top = () => {
     content = <p>Loading...</p>;
   } else if (postsStatus === 'succeeded') {
     const post = posts[postNum].data;
-    let image = <img src='./public/lines.jpg' alt='' />;
-    if (post.post_hint === 'image') {
-      image = <img src={post.url} alt='' />
-    } else if (post.post_hint === 'rich:video') {
-      image = <video controls autoplay muted src={post.url}>Video unsupported.</video>
-    } else {
-      if (post.thumbnail) image = <img src={post.thumbnail} alt='' />
-    }
+    const image = extractImage(post);
     content = (
       <section className='current-top-post'>
         <div className='top-image'>
