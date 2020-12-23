@@ -16,6 +16,7 @@
 }
 
 .top-image {
+  flex-grow: 1;
   overflow: hidden;
 }
 

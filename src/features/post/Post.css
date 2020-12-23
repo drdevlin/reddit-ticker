@@ -17,7 +17,9 @@
 }
 
 .post-content {
+  flex-grow: 1;
   overflow: scroll;
+  background-color: #f1f6f9;
 }
 
 .post-content img {
