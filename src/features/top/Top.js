@@ -7,6 +7,8 @@ import {
   selectError, 
   fetchPosts 
 } from './topSlice';
+import { selectExternalPost, selectMode } from '../post/viewPortSlice';
+import { Post } from '../post/Post';
 
 import './Top.css';
 
@@ -16,6 +18,8 @@ export const Top = () => {
   const posts = useSelector(selectAllPosts);
   const postsStatus = useSelector(selectStatus);
   const error = useSelector(selectError);
+  const viewPort = useSelector(selectMode);
+  const externalPost = useSelector(selectExternalPost);
 
   useEffect(() => {
     if (postsStatus === 'idle') {
@@ -59,6 +63,10 @@ export const Top = () => {
     );
   } else if (postsStatus === 'failed') {
     content = <div>{error}</div>;
+  }
+
+  if (viewPort) {
+    content = <Post post={externalPost} />
   }
 
   return (
